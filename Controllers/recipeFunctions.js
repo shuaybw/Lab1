@@ -5,8 +5,6 @@
 
 // Show all recipes
 const showAllRecipe = asyncHandler(async (req, res) => {
-    const recipes = await Recipe.find();
-    res.json(recipes);
   });
   
   // Get recipe by ID
@@ -28,3 +26,12 @@ const showAllRecipe = asyncHandler(async (req, res) => {
   const deleteRecipe = asyncHandler(async (req, res) => {
    
   });
+
+
+  module.exports = {
+    showAllRecipe,
+    getRecipeById,
+    createNewRecipe,
+    updateRecipe,
+    deleteRecipe
+};
