@@ -1,30 +1,26 @@
 const express = require("express");
-const {recipeFunctions} = require("../Controllers/recipeFunctions")
-const router = express.router();
+const router = express.Router();
+const {
+    showAllRecipe,
+    getRecipeByTitle,
+    createNewRecipe,
+    updateRecipe,
+    deleteRecipe
+} = require("../Controllers/recipeFunctions")
 
-router.route("/").get(recipeFunctions);
+// Route to get all recipes
+router.route("/").get(showAllRecipe);
 
+// Route to get a recipe by title
+router.route("/:title").get(getRecipeByTitle);
 
-router.route("/").get((req,res) => {
-    res.status(200).json({message: "Show all recipes"})
-});
+// Route to create a new recipe
+router.route("/").post(createNewRecipe);
 
-router.route("/:title").get((req,res) => {
-    res.status(200).json({message: "Retrieve a specific recipe by title"})
-});
+// Route to update a recipe by ID
+router.route("/:id").put(updateRecipe);
 
-router.route("/").post((req,res) => {
-    res.status(200).json({message: "Create a new recipe"})
-});
-
-router.route("/:id").put((req,res) => {
-    res.status(200).json({message: "Update a recipe"})
-});
-
-router.route("/:id").delete((req,res) => {
-    res.status(200).json({message: "Delete a recipe"})
-});
-
-
+// Route to delete a recipe by ID
+router.route("/:id").delete(deleteRecipe);
 
 module.exports = router;
