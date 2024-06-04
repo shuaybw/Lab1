@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Recipe Management System</title>
+</head>
+<body>
+    <main>
+        <section>
+            <h2>Add a Recipe</h2>
+            <form id="addRecipeForm">
+                <label for="title">Recipe Title:</label><br>
+                <input type="text" id="title" name="title" required><br>
+                
+                <label for="ingredients">Ingredients:</label><br>
+                <textarea id="ingredients" name="ingredients" required></textarea><br>
+                
+                <label for="instructions">Preparation Instructions:</label><br>
+                <textarea id="instructions" name="instructions" required></textarea><br>
+                
+                <label for="cookingTime">Cooking Time (in minutes):</label><br>
+                <input type="number" id="cookingTime" name="cookingTime" required><br>
+                
+                <button type="submit">Submit Recipe</button>
+            </form>
+        </section>
+        
+        <section>
+            <h2>Recipe List</h2>
+            <table id="recipesTable">
+                <thead>
+                    <tr>
+                        <th>Title</th>
+                        <th>Ingredients</th>
+                        <th>Instructions</th>
+                        <th>Cooking Time</th>
+                        <th>Modify</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <!-- Recipes will be dynamically inserted here -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <script src="app.js"></script>
+</body>
+</html>
