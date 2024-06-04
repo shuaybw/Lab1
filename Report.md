@@ -5,6 +5,8 @@ When I began working on the lab, I recalled a lecture where our teacher highligh
 
 During the lab process, I didn't encounter any major issues, just some minor hiccups that weren't very significant. One issue I remember was having trouble connecting to MongoDB. It turned out that the problem was simply that I had forgotten to remove the "<>" symbols from the connection string.
 
+To test my APIs, I used Thunder Client, a Visual Studio Code extension. I chose this over Postman because it was more convenient, allowing me to test APIs without having to leave VS Code.
+
 I decided to use something called asynchandler which is a simple middleware for managing exceptions in asynchronous Express routes and forwarding them to your Express error handlers. This makes for simpler and clean code. 
 
 In conclusion, developing Lab 1 gave me deep insights into full-stack web development and the integration of front-end and back-end components using the MVC architecture. This experience was invaluable for enhancing my skills in creating interactive web applications.
