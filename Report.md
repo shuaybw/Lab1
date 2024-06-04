@@ -7,5 +7,4 @@ During the lab process, I didn't encounter any major issues, just some minor hic
 
 I decided to use something called asynchandler which is a simple middleware for managing exceptions in asynchronous Express routes and forwarding them to your Express error handlers. This makes for simpler and clean code. 
 
-All in all the project was straight forward and went pretty well.
-
+In conclusion, developing Lab 1 gave me deep insights into full-stack web development and the integration of front-end and back-end components using the MVC architecture. This experience was invaluable for enhancing my skills in creating interactive web applications.
