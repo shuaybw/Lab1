@@ -16,7 +16,7 @@ function fetchRecipes() {
 
 function displayRecipes(recipes) {
     const tableBody = document.getElementById('recipesTable').getElementsByTagName('tbody')[0];
-    tableBody.innerHTML = ''; // Clear existing entries
+    tableBody.innerHTML = ''; 
     recipes.forEach(recipe => {
         const row = `<tr>
             <td>${recipe.title}</td>
@@ -47,7 +47,7 @@ function addRecipe() {
     .then(response => response.json())
     .then(data => {
         alert('Recipe added successfully');
-        fetchRecipes(); // Refresh the recipe list
+        fetchRecipes();
     })
     .catch(error => console.error('Error adding recipe:', error));
 }
@@ -57,13 +57,12 @@ function deleteRecipe(id) {
         fetch(`/api/recipes/${id}`, { method: 'DELETE' })
         .then(() => {
             alert('Recipe deleted successfully');
-            fetchRecipes(); // Refresh the recipe list
+            fetchRecipes(); 
         })
         .catch(error => console.error('Error deleting recipe:', error));
     }
 }
 
 function editRecipe(id) {
-    // Example placeholder function to initiate edit
     console.log('Edit function to be implemented:', id);
 }

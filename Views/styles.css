@@ -6,8 +6,7 @@ body {
 }
 
 header {
-    background-color: #2C9494;
-    color: white;
+
     padding: 10px 20px;
     text-align: center;
 }
@@ -24,7 +23,6 @@ form {
     background-color: #fff;
     padding: 20px;
     border-radius: 8px;
-    box-shadow: 0 4px 8px rgba(0,0,0,0.1);
 }
 
 input[type="text"],
@@ -75,3 +73,9 @@ th {
 h2{
     text-align: center;
 }
+
+#modify{
+    display: flex;
+    align-items: end;
+}
+

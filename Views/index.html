@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles.css">
-    <title>Recipe Management System</title>
+    <title>Lab 1</title>
 </head>
 <body>
     <main>
@@ -23,7 +23,7 @@
                 <label for="cookingTime">Cooking Time (in minutes):</label><br>
                 <input type="number" id="cookingTime" name="cookingTime" required><br>
                 
-                <button type="submit">Submit Recipe</button>
+                <button type="submit" id="submit">Submit Recipe</button>
             </form>
         </section>
         
@@ -36,11 +36,11 @@
                         <th>Ingredients</th>
                         <th>Instructions</th>
                         <th>Cooking Time</th>
-                        <th>Modify</th>
+                        <th id="modify">Modify</th>
                     </tr>
                 </thead>
                 <tbody>
-                    <!-- Recipes will be dynamically inserted here -->
+                    
                 </tbody>
             </table>
         </section>
