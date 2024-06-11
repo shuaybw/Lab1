@@ -18,7 +18,7 @@ function displayRecipes(recipes) {
     const tableBody = document.getElementById('recipesTable').getElementsByTagName('tbody')[0];
     tableBody.innerHTML = ''; 
     recipes.forEach(recipe => {
-        const row = `<tr>
+        const row = `<tr data-id="${recipe._id}">
             <td>${recipe.title}</td>
             <td>${recipe.ingredients}</td>
             <td>${recipe.instructions}</td>
@@ -64,5 +64,38 @@ function deleteRecipe(id) {
 }
 
 function editRecipe(id) {
-    console.log('Edit function to be implemented:', id);
+    const row = document.querySelector(`#recipesTable tr[data-id="${id}"]`);
+    if (!row) {
+        console.error("Recipe row not found in the table for id:", id);
+        return;
+    }
+
+    const [title, ingredients, instructions, cookingTime] = Array.from(row.cells).map(cell => cell.textContent);
+
+    const updatedTitle = prompt("Enter updated title:", title) || title;
+    const updatedIngredients = prompt("Enter updated ingredients :", ingredients) || ingredients;
+    const updatedInstructions = prompt("Enter updated instructions:", instructions) || instructions;
+    const updatedCookingTime = prompt("Enter updated cooking time:", cookingTime) || cookingTime;
+
+    const updatedRecipe = {
+        title: updatedTitle,
+        ingredients: updatedIngredients,
+        instructions: updatedInstructions,
+        cookingTime: updatedCookingTime
+    };
+
+    fetch(`/api/recipes/${id}`, {
+        method: 'PUT',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(updatedRecipe)
+    })
+    .then(response => {
+        if (!response.ok) throw new Error('Network response was not ok');
+        return response.json();
+    })
+    .then(() => {
+        alert('Recipe updated successfully');
+        fetchRecipes(); 
+    })
+    .catch(error => console.error('Error updating recipe:', error));
 }
