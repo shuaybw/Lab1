@@ -23,7 +23,7 @@ PORT=3000
 MONGO_URI=your_mongodb_connection_string 
 HOSTNAME = "localhost"
 ```
-6.Run the application
+6.Start the application
 ```bash
 npm start
 ```
